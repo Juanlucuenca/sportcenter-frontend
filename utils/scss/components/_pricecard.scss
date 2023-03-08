@@ -1,0 +1,102 @@
+.pricetable {
+    min-height: 100vh;
+    background-color: $blacker;
+    text-align: center;
+    background: url('/utils/svg/back.svg') no-repeat center / cover ;
+
+    @include flexible(flex, column, wrap, space-evenly, center);
+
+    &__background {
+        position: relative;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        z-index: -100;
+        filter: brightness(0.35);
+    }
+
+    &__header {
+        width: 100%;
+        padding-top: 2em;
+
+        @include flexible(flex, column, wrap, space-around, center);
+    }
+
+    &__title {
+        font-size: 3em;
+        font-weight: 900;
+        margin-bottom: .5em;
+    }
+
+    &__description {
+        width: 50%;
+        font-size: 1.3em;
+        opacity: .8;
+    }
+}
+
+.cardsContainer {
+    width: 100%;
+
+    @include flexible(flex, row, wrap, space-around, center);
+}
+
+.priceCard{
+    width: 22em;
+    height: 33em;
+    border-radius: 25px;
+    border: 1px solid $primary;
+    margin: 4em 0 4em 0;
+
+    @include flexible(flex, column, nowrap, space-around, center);
+
+    &__title{
+        font-weight: 800;
+        font-size: 1.8em;
+        color: $primary;
+    }
+
+    &__price{
+        font-weight: 700;
+        font-size: 2em;
+        letter-spacing: .08em;
+
+        &--mensual {
+            font-weight: 400;
+            font-size: .4em;
+            letter-spacing: 0em;
+            opacity: .9;
+        }
+    }
+    // .&__featureList{}
+    &__featureItem{
+        padding: .3em 0 .3em 0;
+        text-align: left;
+    }
+    &__button{
+        font-size: 1em;
+        text-transform: uppercase;
+        letter-spacing: .1em;
+        font-weight: 300;
+        width: 60%;
+        height: 10%;
+        border-radius: 25px;
+        border: 1px solid $primary;
+        cursor: pointer;
+        transition: .4s ease;
+        color: $primary;
+        &:hover {
+            background-color: $primary;
+            box-sizing: 0 0 10px $primary;
+            color: $lighter;
+        }
+    }
+
+
+    
+}
+
+.fa-solid {
+    margin-right: .4em;
+    color: $primary;
+}

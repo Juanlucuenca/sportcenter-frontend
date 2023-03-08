@@ -1,0 +1,47 @@
+.information{
+    @include flexible(flex, row, wrap, center, center);
+
+    @media screen and (max-width: 1000px) {
+        @include flexible(flex, column, nowrap, center, center);
+    }
+
+    &__col {
+
+        @media screen and (max-width: 1000px) {
+            width: 100%;
+        }
+
+        background-color: $blacker;
+
+        width: 50%;
+        height: 60vh;
+
+        @include flexible(flex, column, nowrap, center, center);
+
+    }
+
+    &__wrapper {
+        width: 65%;
+
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.7);
+    }
+
+    &__title {
+        @extend %titleMedium;
+        text-transform: uppercase;
+    }
+
+    &__text {
+        font-size: 1em;
+        font-weight: 100;
+        line-height: 1.3em;
+        opacity: .8;
+        margin: .8em 0 .8em 0;
+    }
+}

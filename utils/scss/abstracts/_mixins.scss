@@ -1,0 +1,28 @@
+// ********* GRUID *************
+@mixin short-flex($just , $align ){
+    display         : flex;
+    justify-content : $just;
+    align-items     : $align;
+}
+
+@mixin flexible( $dis , $direction , $corte , $just , $align ){
+    display         : $dis;
+    flex-flow       : $direction $corte;
+    justify-content : $just;
+    align-items     : $align;
+}
+// ********* FLEX *************
+
+
+// ********* GRUID *************
+@mixin grid( $columnas , $espacio){
+    display                 : grid;
+    grid-template-columns   : repeat( $columnas , 1fr );
+    gap                     : $espacio;
+
+    @media screen and (max-width:480px) {
+        grid-template-columns : 1fr ;
+        gap : 0em;
+    }
+}
+// ********* GRUID *************

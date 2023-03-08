@@ -1,0 +1,47 @@
+.footer{
+    border-top: .5em solid $primary;
+    padding: 4em 0 4em 0;
+    min-height: 50vh;
+    background-color: $blacker;
+    text-align: left;
+
+    @include flexible (flex, row, wrap, space-around, flex-start);
+
+    @media screen and (max-width: 740px) {
+        font-size: 75%;
+        @include flexible(flex, column, nowrap, center , center);
+
+        &__col {
+            width: 50%;
+        }
+    }
+
+    &__col {
+        padding:2em 0 2em 0;
+    }
+
+    &__title {
+        font-size: 1.6em;
+        font-weight: 400;
+        letter-spacing: 0.1em;
+        color: $primary;
+    }
+
+    &__items {
+        font-size: 1.4em;
+        font-weight: 100;
+        margin: 1rem 0px;
+    }
+
+    &__brand {
+        font-size: 2em;
+        font-weight: 900;
+        color: $primary;
+    }
+
+    &__subtitle {
+        font-size: 1.2em;
+        font-weight: 100;
+        color: var(--color-blanco);
+    }
+}

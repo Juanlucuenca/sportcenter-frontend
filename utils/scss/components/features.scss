@@ -1,0 +1,73 @@
+.features {
+    min-height: 80vh;
+    background: url('/utils/svg/back.svg') no-repeat center;
+    background-size: cover;
+    text-align: center;
+
+    @media screen and (max-width: 859px) {
+        font-size: 60%;
+    }
+
+    @include flexible(flex, column, nowrap, center, center);
+
+    &__wrapper {
+        padding: 2em 0 2em 0;
+        margin: 1em;
+        width: 85%;
+        height: 40%;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(18em, 2fr));
+        justify-items: center;
+        align-items: center;
+        gap: 3em;
+    }
+
+    &__title {
+        @extend %titleMedium;
+        position: relative;
+        z-index: 1;
+        text-transform: uppercase;
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 4%;
+            right: .5%;
+            background-color: $primary;
+            width: 5em;
+            height: .25em;
+            opacity: .8;
+            z-index: -1;
+        }
+    }
+
+    &__text {
+        @extend %textSmall;
+        width: 75%;
+        opacity: .9;
+    }
+}
+
+.feature{
+    width: 15em;
+    height: 15em;
+
+    margin: 1em;
+
+    @include flexible(flex, column, nowrap, center, center);
+    gap: 1em;
+}
+.feature__icon{
+    font-size: 3em;
+    color: $primary;
+}
+.feature__title{
+    font-size: 1.1em;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.feature__description{
+    font-size: 1em;
+    font-weight: 200;
+}

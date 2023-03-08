@@ -1,0 +1,58 @@
+.advertisements {
+    min-height: 50vh;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(368px, 1fr));
+}
+
+
+
+.banner{
+    height: 50vh;
+    position: relative;
+    text-align: center;
+
+    @include flexible(flex, column, nowrap, center, center);
+    gap: .5em;
+
+    @media (min-width: 753px) and (max-width: 1458px) {
+        &:nth-child(3) {
+            grid-column-end: span 2;
+        }
+    }
+
+    &__background {
+        position: absolute;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        filter: brightness(0.35);
+
+        &--solid {
+            filter: none;
+            background-color: $blacker;
+        }
+    }
+
+    &__title {
+        @extend %titleSmall;
+        width: 80%;
+
+    }
+
+    &__text {
+        @extend %textSmall; 
+        width: 80%;
+    }
+
+    &__icon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: .8rem 1rem .8rem 1rem;
+        background-color: $primary;
+        border-radius: 0 0 0 .5rem;
+        font-size: 2em;
+    }
+}
